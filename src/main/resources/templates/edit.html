@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Blog Group</title>
+</head>
+	<body>
+		<h1>Edit Post</h1>
+ 		<a th:href="@{/}"><button>Home</button></a>
+ 		this is a test
+		<form th:action="@{'/edit/{id}' (id = ${blog.id})}" th:method="put">
+ 			<input placeholder="You currently do not have title" th:value="${blog.title}" name="title"/>
+			<input placeholder="You currently have no content" th:value="${blog.content}" name="content"/>
+			<input placeholder="Who's claiming this work?" th:value="${blog.author}" name="author"/> 
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>
